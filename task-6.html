@@ -9,7 +9,19 @@
   </head>
   <body>
     <p><a href="./index.html">Go back</a></p>
+<style>
+  #boxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
+  .box {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #3d0606;
+  }
+</style>
     <div id="controls">
       <input type="number" min="1" max="100" step="1" />
       <button type="button" data-create>Create</button>
@@ -17,6 +29,20 @@
     </div>
 
     <div id="boxes"></div>
+    <style>
+      #boxes {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    
+      .boxes {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        background-color: #230b0b;
+      }
+    </style>
+    
 
     <script src="./js/task-6.js" type="module"></script>
   </body>
