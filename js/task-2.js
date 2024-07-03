@@ -29,7 +29,7 @@ const gallery = document.querySelector(".gallery");
 
 const fragment = document.createDocumentFragment();
 
-images.forEach((image) => {
+images.slice(0, 6).forEach((image) => {
   const li = document.createElement("li");
   const img = document.createElement("img");
   img.setAttribute("src", image.url);
@@ -40,22 +40,48 @@ images.forEach((image) => {
 
 gallery.appendChild(fragment);
 
+// function createImageGallery(images) {
+//   const imageEl = document.querySelector("ul.js-gallery");
+//   imageEl.style.cssText = `display: flex;
+//   flex-wrap: wrap;`;
+//   imageEl.style.listStyleType = `none`;
+//   imageEl.style.gap = "48px 24px";
+//   const elUl = document.createDocumentFragment();
+//   images.forEach((image) => {
+//     const li = document.createElement("li");
+//     const img = document.createElement("img");
+//     img.src = image.url;
+//     img.alt = image.alt;
+//     img.width = 300;
+//     img.height = 300;
+//     li.appendChild(img);
+//     elUl.appendChild(li);
+//   });
+//   imageEl.appendChild(elUl);
+// }
+
 function createImageGallery(images) {
   const imageEl = document.querySelector("ul.js-gallery");
-  imageEl.style.cssText = `display: flex;
-  flex-wrap: wrap;`;
-  imageEl.style.listStyleType = `none`;
+  imageEl.style.display = "flex";
+  imageEl.style.flexWrap = "wrap";
+  imageEl.style.listStyleType = "none";
   imageEl.style.gap = "48px 24px";
+
   const elUl = document.createDocumentFragment();
+
   images.forEach((image) => {
     const li = document.createElement("li");
     const img = document.createElement("img");
     img.src = image.url;
     img.alt = image.alt;
-    img.width = 300;
-    img.height = 300;
+    img.style.width = "300px";
+    img.style.height = "300px";
+    img.style.objectFit = "cover"; // This ensures the image fits the specified dimensions without stretching
+
+    li.style.marginBottom = "24px"; // Adding margin between each image
     li.appendChild(img);
     elUl.appendChild(li);
   });
+
   imageEl.appendChild(elUl);
 }
