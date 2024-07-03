@@ -25,20 +25,37 @@ const images = [
   },
 ];
 
-const pictureEl = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
-const listItem = document.createElement("li");
-listItem.classList.add("li");
+const fragment = document.createDocumentFragment();
 
-// pictureEl.append(listItem);
+images.forEach((image) => {
+  const li = document.createElement("li");
+  const img = document.createElement("img");
+  img.setAttribute("src", image.url);
+  img.setAttribute("alt", image.alt);
+  li.appendChild(img);
+  fragment.appendChild(li);
+});
 
-const imageEl = document.createElement("img");
-imageEl.src =
-  "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg";
-imageEl.alt = "Lighthouse Coast Sea";
-imageEl.width = 320;
+gallery.appendChild(fragment);
 
-pictureEl.append(imageEl);
-console.log(listItem);
-
-console.log(ulEl.children);
+function createImageGallery(images) {
+  const imageEl = document.querySelector("ul.js-gallery");
+  imageEl.style.cssText = `display: flex;
+  flex-wrap: wrap;`;
+  imageEl.style.listStyleType = `none`;
+  imageEl.style.gap = "48px 24px";
+  const elUl = document.createDocumentFragment();
+  images.forEach((image) => {
+    const li = document.createElement("li");
+    const img = document.createElement("img");
+    img.src = image.url;
+    img.alt = image.alt;
+    img.width = 300;
+    img.height = 300;
+    li.appendChild(img);
+    elUl.appendChild(li);
+  });
+  imageEl.appendChild(elUl);
+}
