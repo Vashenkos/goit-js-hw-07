@@ -76,9 +76,9 @@ function createImageGallery(images) {
     img.alt = image.alt;
     img.style.width = "300px";
     img.style.height = "300px";
-    img.style.objectFit = "cover"; // This ensures the image fits the specified dimensions without stretching
+    img.style.objectFit = "cover";
 
-    li.style.marginBottom = "24px"; // Adding margin between each image
+    li.style.marginBottom = "24px";
     li.appendChild(img);
     elUl.appendChild(li);
   });
