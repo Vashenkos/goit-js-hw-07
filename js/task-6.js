@@ -1,46 +1,3 @@
-// const input = document.querySelector("input");
-// const createBtn = document.querySelector("[data-create]");
-// const destroyBtn = document.querySelector("[data-destroy]");
-// const boxesContainer = document.getElementById("boxes");
-
-// createBtn.addEventListener("click", createBoxes);
-// destroyBtn.addEventListener("click", destroyBoxes);
-
-// function createBoxes() {
-//   let html = "";
-//   let size = 30;
-
-//   let currentWidth = parseInt(createBoxes(boxesContainer).width);
-//   let currentHeight = parseInt(createBoxes(boxesContainer).height);
-//   console.log(currentHeight);
-
-//   increase.addEventListener("click", () => {
-//     if (currentWidth >= 60 || currentHeight >= 60) {
-//       alert("Перестань клацати!!!!");
-//       return;
-//     }
-//     currentWidth += 10;
-//     currentHeight += 10;
-//     createBoxes.style.width = currentWidth + "px";
-//     createBoxes.style.height = currentHeight + "px";
-//     createBoxes.style.color = getRandomHexColor();
-//   });
-
-//   boxesContainer.innerHTML = html;
-
-//   input.value = "";
-// }
-
-// function destroyBoxes() {
-//   boxesContainer.innerHTML = "";
-// }
-
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, "0")}`;
-// }
-
 const input = document.querySelector("input");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
@@ -52,13 +9,9 @@ destroyBtn.addEventListener("click", destroyBoxes);
 function createBoxes() {
   let html = "";
   let size = 30;
-
-  // Отримуємо кількість елементів для створення
   const amount = parseInt(input.value);
 
-  // Перевіряємо валідність введеного значення
-  if (amount < 1 || amount > 100 || z {
-    alert("Будь ласка, введіть число від 1 до 100.");
+  if (amount < 1 || amount > 100) {
     return;
   }
 
@@ -68,29 +21,6 @@ function createBoxes() {
     background-color: ${getRandomHexColor()};"></div>`;
     size += 10;
   }
-
-const imageElements = images
-  .map(
-    ({ preview, original, description }) =>
-      `<li class="gallery-item">
-  <a class="gallery-link" href="${original}">
-    <img
-      class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-</li>`
-  )
-  .join("");
-
-
-
-
-
-
-
 
   boxesContainer.innerHTML = html;
 
