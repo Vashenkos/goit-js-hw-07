@@ -57,7 +57,7 @@ function createBoxes() {
   const amount = parseInt(input.value);
 
   // Перевіряємо валідність введеного значення
-  if (amount < 1 || amount > 100 || isNaN(amount)) {
+  if (amount < 1 || amount > 100 || z {
     alert("Будь ласка, введіть число від 1 до 100.");
     return;
   }
@@ -68,6 +68,29 @@ function createBoxes() {
     background-color: ${getRandomHexColor()};"></div>`;
     size += 10;
   }
+
+const imageElements = images
+  .map(
+    ({ preview, original, description }) =>
+      `<li class="gallery-item">
+  <a class="gallery-link" href="${original}">
+    <img
+      class="gallery-image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+    />
+  </a>
+</li>`
+  )
+  .join("");
+
+
+
+
+
+
+
 
   boxesContainer.innerHTML = html;
 
